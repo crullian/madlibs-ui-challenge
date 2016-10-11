@@ -16,16 +16,16 @@ var MadlibForm = React.createClass({
   },
   render: function() {
     return (
-      <div className='madlib-form'>
+      <div className='madlib-form' ref='form'>
         <h2>Fill out the form below to create your madlib</h2>
         <form onSubmit={this.onSubmit}>
-          <Form
-            ref="form"
-            onChange={this.onChange}
-            value={this.state.value}
-            type={this.state.type}
-            options={this.state.options}
-          />
+            <Form
+              ref="form"
+              onChange={this.onChange}
+              value={this.state.value}
+              type={this.state.type}
+              options={this.state.options}
+            />
           <button
             className="submit-button"
             type="submit"
@@ -38,6 +38,10 @@ var MadlibForm = React.createClass({
   },
   // you probably shouldn't have to touch any of the other functions
   // on this class
+
+  componentDidMount: function() {
+    this.refs.form.classList.add('loaded');
+  },
   getInitialState: function() {
     var inputs = {};
     var result;

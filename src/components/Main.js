@@ -61,12 +61,10 @@ var AppComponent = React.createClass({
       //   </div>
       // )
       <div className="main">
-        <h1>FLOCABULARY MADLIB</h1>
         {content}
       </div>
     );
   },
-
   getInitialState: function() {
     return {
       submittedValue: null
