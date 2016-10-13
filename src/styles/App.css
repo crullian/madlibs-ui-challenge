@@ -1,4 +1,50 @@
 /* Base Application Styles */
+body {
+	background-color: #00aa59;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main {
+	text-align: center;
+	color: white;
+}
+
+h1 {
+	opacity: 0.3;
+}
+
+fieldset {
+	border: none;
+}
+
+input[type="text"] {
+	background-color: #00aa59;
+	border: none;
+	border-bottom: solid 5px white;
+	color: white;
+	outline: none;
+	-webkit-transition: all 0.3s ease;
+	transform: scale(0.75, 0.75);
+	opacity: 0.3;
+}
+
+input[type="text"]:focus, label {
+	opacity: 1;
+	font-size: 55px;
+}
+
+label::after {
+	content: ":";
+}
+
+input[type="text"]:focus + span {
+	display: none;
+}
 
 .madlib-line {
   display: block;

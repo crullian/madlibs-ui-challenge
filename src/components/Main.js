@@ -60,9 +60,11 @@ var AppComponent = React.createClass({
       //     <p></p>
       //   </div>
       // )
-      <div className="main">
-        <h1>FLOCABULARY MADLIB</h1>
-        {content}
+      <div className="container">
+        <div className="main">
+          <h1>Flocabulary Madlib</h1>
+          {content}
+        </div>
       </div>
     );
   },
