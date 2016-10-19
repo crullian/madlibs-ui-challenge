@@ -1,4 +1,5 @@
 var React = require('react');
+
 // We're going to use this open source forms library to create our
 // madlib form
 var t = require('tcomb-form');
@@ -18,7 +19,7 @@ var MadlibForm = React.createClass({
     return (
       <div className='madlib-form'>
         <h2>Fill out the form below to create your madlib</h2>
-        <form onSubmit={this.onSubmit}>
+        <form className="form-horizontal" onSubmit={this.onSubmit}>
           <Form
             ref="form"
             onChange={this.onChange}
@@ -27,7 +28,7 @@ var MadlibForm = React.createClass({
             options={this.state.options}
           />
           <button
-            className="submit-button"
+            className="btn btn-primary submit-button"
             type="submit"
           >
             Make your mad lib!
@@ -71,6 +72,13 @@ var MadlibForm = React.createClass({
         fields: {
           number: {
             type: 'number'
+          }
+        },
+        config: {
+          horizontal: {
+            lg: [4, 6],
+            md: [4, 6],
+            sm: [4, 6]
           }
         }
       },
