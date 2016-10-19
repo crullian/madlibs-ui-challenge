@@ -1,8 +1,9 @@
 // attempt to reset browser differences in default CSS
 require('normalize.css/normalize.css');
 // this file is where styles should go
-require('styles/App.css');
-require('styles/App.scss');
+// require('styles/App.css');
+// require('styles/App.scss');
+require('styles/App.less');
 
 // Flocabulary uses React extensively. This exercise is built with it
 // but it is not required knowledge. Ideally, you will not have to
@@ -61,7 +62,10 @@ var AppComponent = React.createClass({
       //   </div>
       // )
       <div className="main">
-        <h1>FLOCABULARY MADLIB</h1>
+        <div className="heading-1">
+          <img src="/assets/Sticker+-+Purple.png"/>
+          <h1>FLOCABULARY MADLIBS</h1>
+        </div>
         {content}
       </div>
     );
