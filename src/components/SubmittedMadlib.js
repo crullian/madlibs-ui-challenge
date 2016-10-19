@@ -10,15 +10,15 @@ var SubmittedMadlib = React.createClass({
       // madlib
       <div className='submitted-madlib-container'>
         <h2>Your madlib:</h2>
+        <div className='submitted-madlib'>
+          {filledInMadlib}
+        </div>
         <button
-        	className='back-button'
+        	className='btn btn-primary back-button'
           onClick={this.props.reset}
         >
           Go back
         </button>
-        <div className='submitted-madlib'>
-          {filledInMadlib}
-        </div>
       </div>
     );
   },
