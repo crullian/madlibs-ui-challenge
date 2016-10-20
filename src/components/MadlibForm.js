@@ -76,8 +76,6 @@ var MadlibForm = React.createClass({
         },
         config: {
           horizontal: {
-            lg: [4, 6],
-            md: [4, 6],
             sm: [4, 6]
           }
         }
