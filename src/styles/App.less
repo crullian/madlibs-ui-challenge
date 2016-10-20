@@ -1,3 +1,18 @@
+/* Variables */
+
+/* Font sizes */
+@h1: 2.4615384615em;
+@h2: 1.8461538462em;
+@base: 1.0769230769em;
+@button: 1.3846153846em;
+@madlib-line-base: 0.9230769231em;
+@madlib-line-full: 1.2307692308em;
+
+/* Colors */
+@blue: #018ed5;
+@blue-hover: #019fee;
+
+
 /* Base Form Styles */
 
 .main {
@@ -9,22 +24,26 @@
 .heading-1 {
   text-shadow: 0 1px 1px rgba(0,0,0,.25);
   text-align: center;
-  background: #018ED5;
+  background: @blue;
 
   img {
-    width: 120px;
+    width: 100px;
     display: none;
     &:hover {
-      animation-name:             rotate; 
-      animation-duration:         0.5s; 
-      animation-iteration-count:  once;
-      transition-timing-function: linear;
+      -webkit-animation-name:             rotate; 
+      -webkit-animation-duration:         0.5s; 
+      -webkit-animation-iteration-count:  once;
+      -webkit-transition-timing-function: linear;
+              animation-name:             rotate; 
+              animation-duration:         0.5s; 
+              animation-iteration-count:  once;
+              transition-timing-function: linear;
     }
   }
 
   h1 {
     color: #fff;
-    font-size: 3em;
+    font-size: @h1;
     font-weight: 600;
     display: inline-block;
   }
@@ -38,8 +57,8 @@
   box-shadow: 0 10px 60px rgba(0, 0, 0, 0.25);
 
   h2 {
-    font-size: 2em;
-    padding: 20px;
+    font-size: @h2;
+    padding: 10px;
     text-align: center;
   }
 }
@@ -47,29 +66,34 @@
 .fieldset {
   margin: 0 auto;
   border: none;
-  padding-bottom: 1.75em;
+  padding-bottom: 10px;
 
   .control-label {
-    font-size: 1.5em;
-    padding-top: 4px;
+    font-size: @base;
+    padding-top: 0;
   }
 
   input.form-control {
-    height: 42px;
-    font-size: 1.5em;
+    height: 24px;
+    font-size: @base;
     transition: all .2s ease;
   }
 }
 
 .error-block {
+  -webkit-animation: fadeIn .3s;
   animation: fadeIn .3s;
-  font-size: 18px;
+  font-size: @base;
 }
 
 .form-group-wordEndingWithLy input:focus + .error-block {
   display: none;
 }
 
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -77,9 +101,21 @@
 
 @-webkit-keyframes rotate {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to { 
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(720deg);
     transform: rotate(720deg);
   }
 }
@@ -87,18 +123,18 @@
 .submit-button,
 .back-button {
   border-radius: 4px;
-  font-size: 1.5em;
+  font-size: @button;
   font-weight: 600;
   color: #fff;
-  background: #018ed5;
+  background: @blue;
   border: none;
   display: block;
   margin: 0 auto;
-  padding: 16px 32px;
+  padding: 12px 24px;
   text-shadow: 0 1px 1px rgba(0,0,0,.25);
   transition: all .2s ease;
   &:hover {
-    background: #019fee;
+    background: @blue-hover;
     box-shadow: 0 4px 10px rgba(0,0,0,.25);
   }
 }
@@ -111,7 +147,9 @@
 
 .madlib-line {
   display: block;
+  text-align: center;
   height: 20px;
+  font-size: @madlib-line-base;
 }
 
 .madlib-line.last-of-chunk + .madlib-line {
@@ -120,9 +158,6 @@
 
 .user-submitted-value {
   text-decoration: underline;
-  .something {
-    font-size: 2pt;
-  }
 }
 
 .back-button {
@@ -141,12 +176,12 @@
   }
 
   .madlib-line {
-    font-size: 20px;
+    font-size: @madlib-line-full;
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1074px) {
   .main {
-    margin: 0px 200px;
+    margin: 0px 100px;
   }
 }
